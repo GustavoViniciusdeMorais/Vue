@@ -1,26 +1,30 @@
 <template>
     <div>
-        <h2>Whos marked: {{ marked }}</h2>
+        <h1>{{ title }}</h1>
+        <h2>{{ marked }}</h2>
         <child1 v-on:marked="marked" v-bind:marked="marked" v-on:makemarked="makeMark" ></child1>
         <child2 v-on:marked="marked" v-bind:marked="marked" v-on:makemarked="makeMark" ></child2>
+        <child3 v-on:marked="marked" v-bind:marked="marked" v-on:makemarked="makeMark" ></child3>
     </div>
 </template>
 
 <script>
     import child1 from './child1'
     import child2 from './child2'
+    import child3 from './child3'
 
     export default {
         name: "parent",
         data() {
             return {
-                title: 'We have nothing there to go back!',
+                title: 'Alan Turing quotes',
                 marked: ''
             }
         },
         components: {
             child1,
-            child2
+            child2,
+            child3
         },
         props: ['myname'],
         methods: {

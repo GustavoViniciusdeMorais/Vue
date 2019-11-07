@@ -5,25 +5,25 @@
 
         </button>
         <div class="panel" v-bind:class="{'openChild':amiMarked}">
-            <p>Sometimes it is the people no one can imagine anything of who do the things no one can imagine.</p>
+            <p>We can only see a short distance ahead, but we can see plenty there that needs to be done.</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "child1",
-        data() {
+        name: "child3",
+        props: ["marked"],
+        data(){
             return {
-                name: 'First Component'
+                name: 'Third Component'
             }
         },
         computed: {
             amiMarked(){
                 return this.marked == this.name ? true : false
             }
-        },
-        props: ["marked"]
+        }
     }
 </script>
 
