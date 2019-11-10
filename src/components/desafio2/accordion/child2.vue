@@ -5,28 +5,28 @@
 
         </button>
         <div class="panel" v-bind:class="{'openChild':amiMarked}">
-            <p>Sometimes it is the people no one can imagine anything of who do the things no one can imagine.</p>
+            <p>Those who can imagine anything, can create the impossible.</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "child1",
-        data() {
+        name: "child2",
+        props: ["marked"],
+        data(){
             return {
-                name: 'First Component'
+                name: 'Second Component'
             }
         },
         computed: {
             amiMarked(){
                 return this.marked == this.name ? true : false
             }
-        },
-        props: ["marked"]
+        }
     }
 </script>
 
 <style scoped>
-    @import '../../assets/styles/desafio2.css';
+@import '../../../assets/styles/desafio2.css';
 </style>

@@ -1,7 +1,6 @@
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <h2>{{ marked }}</h2>
         <child1 v-on:marked="marked" v-bind:marked="marked" v-on:makemarked="makeMark" ></child1>
         <child2 v-on:marked="marked" v-bind:marked="marked" v-on:makemarked="makeMark" ></child2>
         <child3 v-on:marked="marked" v-bind:marked="marked" v-on:makemarked="makeMark" ></child3>
@@ -17,7 +16,7 @@
         name: "parent",
         data() {
             return {
-                title: 'Alan Turing quotes',
+                title: 'Card-Accordion',
                 marked: ''
             }
         },

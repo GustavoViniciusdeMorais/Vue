@@ -5,18 +5,18 @@
 
         </button>
         <div class="panel" v-bind:class="{'openChild':amiMarked}">
-            <p>Those who can imagine anything, can create the impossible.</p>
+            <p>We can only see a short distance ahead, but we can see plenty there that needs to be done.</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "child2",
+        name: "child3",
         props: ["marked"],
         data(){
             return {
-                name: 'Second Component'
+                name: 'Third Component'
             }
         },
         computed: {
@@ -28,5 +28,5 @@
 </script>
 
 <style scoped>
-@import '../../assets/styles/desafio2.css';
+    @import '../../../assets/styles/desafio2.css';
 </style>
