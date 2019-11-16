@@ -5,17 +5,21 @@
 
         </button>
         <div class="panel" v-bind:class="{'openChild':amiMarked}">
-            <p>Sometimes it is the people no one can imagine anything of who do the things no one can imagine.</p>
+            <videoexample v-bind:video="'https://www.youtube.com/embed/xRQnJyP77tY'">
+            </videoexample>
         </div>
     </div>
 </template>
 
 <script>
+    import videoexample from "../../videos/videoexample";
+
     export default {
-        name: "child1",
-        data() {
+        name: "child2",
+        props: ["marked"],
+        data(){
             return {
-                name: 'First Component'
+                name: 'Second Component'
             }
         },
         computed: {
@@ -23,10 +27,12 @@
                 return this.marked == this.name ? true : false
             }
         },
-        props: ["marked"]
+        components: {
+            videoexample
+        }
     }
 </script>
 
 <style scoped>
-    @import '../../../assets/styles/desafio2.css';
+@import '../../../assets/styles/desafio2.css';
 </style>

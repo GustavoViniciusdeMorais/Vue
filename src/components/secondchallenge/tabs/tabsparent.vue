@@ -27,7 +27,7 @@
         data() {
             return {
                 title: 'Card-Tabs',
-                tab: ''
+                tab: 'tab1'
             }
         },
         components: {

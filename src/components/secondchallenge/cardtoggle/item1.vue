@@ -1,20 +1,22 @@
 <template>
-    <cartoggletemplate>
+    <cardtoggletemplate>
         <div slot="header" >
-            <button type="button" class="collapsible" @click="addClass" >
-                Open Collapsible
+            <button class="collapsible" @click="addClass" >
+                First
             </button>
         </div>
         <div slot="content" >
             <div class="content" v-bind:class="{'showcontent': this.displaycontent}" >
-                <p>asfsafasdfasdfasdfsfdasfdsadfdsaf</p>
+                <h1>Item 1</h1>
+                <contactform></contactform>
             </div>
-        </div>>
-    </cartoggletemplate>
+        </div>
+    </cardtoggletemplate>
 </template>
 
 <script>
-    import cartoggletemplate from "../../../templates/cardtoggle/cartoggletemplate";
+    import cardtoggletemplate from "../../../templates/cardtoggle/cardtoggletemplate";
+    import contactform from "../../contactform/contactform";
 
     export default {
         name: "item1",
@@ -35,7 +37,8 @@
             }
         },
         components: {
-            cartoggletemplate
+            cardtoggletemplate,
+            contactform
         }
     }
 </script>

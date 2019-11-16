@@ -13,7 +13,7 @@
     import child3 from './child3'
 
     export default {
-        name: "parent",
+        name: "accordion",
         data() {
             return {
                 title: 'Card-Accordion',

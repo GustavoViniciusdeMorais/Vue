@@ -1,13 +1,14 @@
 <template>
 
     <div class="tabcontent" slot="tab-content" v-bind:class="{'showcontent':addClass}" >
-        This tab 1111
+        <h1>Tab 1</h1>
+        <contactform></contactform>
     </div>
 
 </template>
 
 <script>
-
+    import contactform from "../../contactform/contactform";
     export default {
         name: "tab1",
         data() {
@@ -20,6 +21,9 @@
             addClass(){
                 return this.name == this.tabname ? true : false
             }
+        },
+        components: {
+            contactform
         }
     }
 </script>

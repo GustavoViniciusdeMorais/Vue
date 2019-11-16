@@ -1,33 +1,19 @@
 <template>
   <div id="app">
-    <cardstoggle></cardstoggle>
-    <tabsparent></tabsparent>
-    <parent></parent>
+    <screen></screen>
   </div>
 </template>
 
 <script>
-import tabsparent from "./components/desafio2/tabs/tabsparent";
-import parent from "./components/desafio2/accordion/parent";
-import cardstoggle from "./components/desafio2/cardtoggle/cardstoggle";
-
+import screen from './components/secondCrud/screen'
 export default {
   name: 'app',
   components: {
-    tabsparent,
-    parent,
-    cardstoggle
+    screen
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
 </style>
