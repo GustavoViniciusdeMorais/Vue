@@ -1,29 +1,19 @@
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <div v-for="photo in list" v-bind:key="photo.id" >
-            {{ photo }}
-            <img v-bind:datasrc="photo.url" />
+        <div v-for="photo in photos" v-bind:key="photo.id" >
+            {{ photo.title }}
+            <img v-bind:src="photo.url" />
         </div>
     </div>
 </template>
 
 <script>
-    import { getImages } from '../../modules/photos'
+    import { mixinPhotos } from "../../modules/photos";
+
     export default {
         name: "list",
-        data() {
-            return {
-                title: 'My Photos'
-            }
-        },
-        computed: {
-            list(){
-                // eslint-disable-next-line no-console
-                console.log('getImages: ',getImages())
-                return getImages()
-            }
-        }
+        mixins: [mixinPhotos]
     }
 </script>
 

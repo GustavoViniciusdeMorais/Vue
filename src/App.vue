@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <screen></screen>
+<!--    <screen></screen>-->
+    <list></list>
   </div>
 </template>
 
 <script>
-import screen from './components/secondCrud/screen'
+// import screen from './components/secondCrud/screen'
+import list from "./components/photos/list";
 export default {
   name: 'app',
   components: {
-    screen
+    // screen
+    list
   }
 }
 </script>
