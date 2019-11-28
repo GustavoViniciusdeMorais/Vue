@@ -4,6 +4,7 @@ export const comments = {
     data() {
         return {
             list: [],
+            displayForm: '',
             obj: {
                 postId: Date.now(),
                 id: Date.now(),
@@ -14,7 +15,7 @@ export const comments = {
         }
     },
     created() {
-        axios.get('http://jsonplaceholder.typicode.com/comments?_limit=5')
+        axios.get('http://jsonplaceholder.typicode.com/comments?_limit=1')
             .then(res => {
                 this.list = res.data
             })
@@ -32,17 +33,20 @@ export const comments = {
                     console.log(error)
                 })
         },
-        addPost(){
+        addPost(event){
           axios.post('http://jsonplaceholder.typicode.com/comments/',{
               postId: Date.now(),
               id: Date.now(),
-              name: this.name,
-              email: this.email,
-              body: this.body
+              name: event.name,
+              email: event.email,
+              body: event.body
           })
               .then(res => {
+                  // eslint-disable-next-line no-console
+                  console.log(res.data)
                   this.list.push(res.data)
               })
+            this.displayForm = ''
         }
     }
 };

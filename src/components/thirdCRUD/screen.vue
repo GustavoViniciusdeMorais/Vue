@@ -2,7 +2,7 @@
     <div>
         <h1 class="text-center">CRUD of Comments</h1>
         <button class="btn btn-primary btn-block" @click="showAddForm" >Add comment</button>
-        <component v-bind:is="insertForm" ></component>
+        <component v-bind:is="displayForm" @includePost="addPost" @cancelAddPost="cancel" ></component>
         <div v-for="el in list" v-bind:key="el.id">
             <singleItem v-bind:name="el.name"
                         v-bind:can-edit="canEdit"
@@ -30,13 +30,15 @@
         data() {
             return {
                 canEdit: true,
-                insertForm: ''
             }
         },
         mixins: [comments],
         methods: {
             showAddForm(){
-                this.insertForm = 'addForm'
+                this.displayForm = 'addForm'
+            },
+            cancel(event){
+                this.displayForm = event
             }
         },
         components: {
